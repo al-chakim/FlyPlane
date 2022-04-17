@@ -37,6 +37,14 @@ class _splashState extends State<splash> {
                 letterSpacing: 10
               ),
             ),
+            // Text(
+            //   'Fly',
+            //   style: whiteTextStyle.copyWith(
+            //     fontSize: 32,
+            //     fontWeight: medium,
+            //     letterSpacing: 10
+            //   ),
+            // )
           ],
         )
       ),
