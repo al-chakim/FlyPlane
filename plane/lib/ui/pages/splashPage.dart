@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:plane/ui/pages/started.dart';
 import '../../shared/theme.dart';
 
 class splash extends StatefulWidget {
@@ -9,6 +12,18 @@ class splash extends StatefulWidget {
 }
 
 class _splashState extends State<splash> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    Timer(
+      Duration(seconds: 5), (){
+        Navigator.pushNamed(context, '/Started');
+        }
+      );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

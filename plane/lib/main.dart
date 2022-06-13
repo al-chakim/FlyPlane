@@ -10,8 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: splash(),
       debugShowCheckedModeBanner: false,
+      routes: {
+        '/' :(context) => splash(),
+        '/Started' :(context) => Started(),
+      },
     );
   }
 }
