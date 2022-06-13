@@ -18,8 +18,8 @@ class _splashState extends State<splash> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 50,
-              width: 50,
+              height: 100,
+              width: 100,
               margin: EdgeInsets.only(bottom: 50),
               decoration: BoxDecoration(
                 image: DecorationImage(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plane/ui/pages/splashPage.dart';
+import 'package:plane/ui/pages/started.dart';
 
 void main () => runApp(MyApp());
 
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: splash(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
