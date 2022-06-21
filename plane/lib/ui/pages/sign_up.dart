@@ -126,7 +126,9 @@ class _SignUpState extends State<SignUp> {
           width: double.infinity,
           height: 55,
           child: TextButton(
-            onPressed: (){},
+            onPressed: (){
+              Navigator.pushNamed(context, '/bonus');
+            },
             style: TextButton.styleFrom(
               backgroundColor: ungu,
               shape: RoundedRectangleBorder(
