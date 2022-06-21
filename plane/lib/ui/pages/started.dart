@@ -48,7 +48,7 @@ class _StartedState extends State<Started> {
                     style: TextButton.styleFrom(
                       backgroundColor: ungu,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)
+                        borderRadius: BorderRadius.circular(defaultRadius)
                       )
                     ),
                     onPressed: (){}, 
