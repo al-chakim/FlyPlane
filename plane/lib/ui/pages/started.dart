@@ -51,7 +51,9 @@ class _StartedState extends State<Started> {
                         borderRadius: BorderRadius.circular(defaultRadius)
                       )
                     ),
-                    onPressed: (){}, 
+                    onPressed: (){
+                      Navigator.pushNamed(context, '/sign-up');
+                    }, 
                     child: Text('Get Started',
                     style: whiteTextStyle.copyWith(
                       fontSize: 18,
