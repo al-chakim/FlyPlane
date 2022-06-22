@@ -18,7 +18,7 @@ class _splashState extends State<splash> {
     // TODO: implement initState
     Timer(
       Duration(seconds: 5), (){
-        Navigator.pushNamed(context, '/Started');
+        Navigator.pushReplacementNamed(context, '/Started');
         }
       );
     super.initState();
