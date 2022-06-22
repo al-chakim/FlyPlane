@@ -50,6 +50,7 @@ class _BonusState extends State<Bonus> {
                         style: whiteTextStyle.copyWith(
                           fontSize: 20
                         ),
+                        overflow: TextOverflow.ellipsis,
                       )
                     ],
                   ),
@@ -57,10 +58,18 @@ class _BonusState extends State<Bonus> {
                 Container(
                   width: 24,
                   height: 24,
+                  margin: EdgeInsets.only(right: 6),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/logo1.png')
                     )
+                  ),
+                ),
+                Text(
+                  'Pay',
+                  style: whiteTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: medium
                   ),
                 )
               ],
