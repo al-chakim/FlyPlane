@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane/ui/pages/home.dart';
 import 'package:plane/ui/widgets/custom_navigasi.dart';
 import '../../shared/theme.dart';
 
@@ -12,6 +13,10 @@ class Mainpage extends StatefulWidget {
 class _MainpageState extends State<Mainpage> {
   @override
   Widget build(BuildContext context) {
+
+    Widget buildContext (){
+      return HomePage();
+    }
 
     Widget CustomBarBawah (){
       return Align(
@@ -49,6 +54,7 @@ class _MainpageState extends State<Mainpage> {
       body: Stack(
         children: [
           CustomBarBawah(),
+          buildContext(),
         ]
       ),
     );
