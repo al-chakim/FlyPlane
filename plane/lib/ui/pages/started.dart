@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane/ui/widgets/custom_button.dart';
 import '../../shared/theme.dart';
 
 class Started extends StatefulWidget {
@@ -40,27 +41,12 @@ class _StartedState extends State<Started> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 50, bottom: 80),
-                  width: 250,
-                  height: 50,
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: ungu,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(defaultRadius)
-                      )
-                    ),
-                    onPressed: (){
-                      Navigator.pushNamed(context, '/sign-up');
-                    }, 
-                    child: Text('Get Started',
-                    style: whiteTextStyle.copyWith(
-                      fontSize: 18,
-                      fontWeight: medium
-                      ),
-                    )
-                  ),
+                CustomButton(
+                  title: 'Get Started',
+                  widht: 220,
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/sign-up');
+                  },
                 )
               ],
             ),
