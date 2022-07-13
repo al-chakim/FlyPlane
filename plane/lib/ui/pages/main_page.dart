@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane/ui/widgets/custom_navigasi.dart';
 import '../../shared/theme.dart';
 
 class Mainpage extends StatefulWidget {
@@ -30,102 +31,13 @@ class _MainpageState extends State<Mainpage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    height: 24,
-                    width: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'assets/globa.png',
-                        )
-                      )
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: ungu
-                    ),
-                  )
-                ],
+              CustomIcon(
+                imageUrl: 'assets/globa.png',
+                isSelected: true,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(),
-                  Container(
-                    height: 24,
-                    width: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'assets/book.png',
-                        )
-                      )
-                    ),
-                  ),
-                  // Container(
-                  //   width: 30,
-                  //   height: 2,
-                  //   decoration: BoxDecoration(
-                  //     color: ungu
-                  //   ),
-                  // )
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(),
-                  Container(
-                    height: 24,
-                    width: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'assets/card.png',
-                        )
-                      )
-                    ),
-                  ),
-                  // Container(
-                  //   width: 30,
-                  //   height: 2,
-                  //   decoration: BoxDecoration(
-                  //     color: ungu
-                  //   ),
-                  // )
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(),
-                  Container(
-                    height: 24,
-                    width: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'assets/settings.png',
-                        )
-                      )
-                    ),
-                  ),
-                  // Container(
-                  //   width: 30,
-                  //   height: 2,
-                  //   decoration: BoxDecoration(
-                  //     color: ungu
-                  //   ),
-                  // )
-                ],
-              ),
+              CustomIcon(imageUrl: 'assets/book.png',),
+              CustomIcon(imageUrl: 'assets/card.png',),
+              CustomIcon(imageUrl: 'assets/settings.png',),
             ],
           ),
         ),

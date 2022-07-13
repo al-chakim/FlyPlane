@@ -12,6 +12,7 @@ Color merah = Color(0xffEB70A5);
 Color bg = Color(0xffFAFAFA);
 Color activ = Color(0xffDBD7ED);
 Color putih = Color(0xffFFFFFF);
+Color trans = Colors.transparent;
 
 TextStyle blackTextStyle = GoogleFonts.poppins(
   color: item
