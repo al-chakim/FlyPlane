@@ -26,9 +26,9 @@ class _BonusState extends State<Bonus> {
             )
           ),
           boxShadow: [BoxShadow(
-            color: ungu.withOpacity(0.5),
+            color: ungu.withOpacity(0.8),
             blurRadius: 50,
-            offset: Offset(0, 10)
+            offset: Offset(0, 5),
           )
           ] 
         ),
@@ -50,7 +50,8 @@ class _BonusState extends State<Bonus> {
                       Text(
                         'Al - Chakim',
                         style: whiteTextStyle.copyWith(
-                          fontSize: 20
+                          fontSize: 20,
+                          fontWeight: semibold
                         ),
                         overflow: TextOverflow.ellipsis,
                       )
@@ -71,14 +72,14 @@ class _BonusState extends State<Bonus> {
                   'Pay',
                   style: whiteTextStyle.copyWith(
                     fontSize: 16,
-                    fontWeight: medium
+                    fontWeight: semibold
                   ),
                 )
               ],
             ),
             SizedBox(height: 40,),
             Text(
-              'Kompas Gramedia',
+              'Balanced',
               style: whiteTextStyle.copyWith(
                 fontWeight: light,
               ),
@@ -86,7 +87,7 @@ class _BonusState extends State<Bonus> {
             Text(
               'IDR 280.000.000',
               style: whiteTextStyle.copyWith(
-                fontWeight: medium,
+                fontWeight: semibold,
                 fontSize: 26
               ),
             )
