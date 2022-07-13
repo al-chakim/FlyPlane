@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:plane/ui/widgets/custom_button.dart';
+import 'package:plane/ui/widgets/custom_form.dart';
 import '../../shared/theme.dart';
 
 class SignUp extends StatefulWidget {
@@ -18,107 +19,31 @@ class _SignUpState extends State<SignUp> {
     Widget inputSection(){
 
       Widget nameInput(){
-        return Container(
-          margin: EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Full Name'),
-              SizedBox(height: 6,),
-              TextFormField(
-                cursorColor: item,
-                decoration: InputDecoration(
-                  hintText: 'Your full name',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius)
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                    borderSide: BorderSide(color: ungu)
-                  )
-                ),
-              )
-            ],
-          ),
+        return CustomForm(
+          title: 'Full Name', 
+          hintText: 'Your Full Name'
         );
       }
 
       Widget emailInput(){
-        return Container(
-          margin: EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Email Address'),
-              SizedBox(height: 6,),
-              TextFormField(
-                cursorColor: item,
-                decoration: InputDecoration(
-                  hintText: 'Your email address',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius)
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                    borderSide: BorderSide(color: ungu)
-                  )
-                ),
-              )
-            ],
-          ),
+        return CustomForm(
+          title: 'Email Address', 
+          hintText: 'Your Email Address'
         );
       }
 
       Widget passInput(){
-        return Container(
-          margin: EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Password'),
-              SizedBox(height: 6,),
-              TextFormField(
-                cursorColor: item,
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'Password',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius)
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                    borderSide: BorderSide(color: ungu)
-                  )
-                ),
-              )
-            ],
-          ),
+        return CustomForm(
+          title: 'Password', 
+          hintText: 'Password',
+          obscureText: true,
         );
       }
 
       Widget hobiInput(){
-        return Container(
-          margin: EdgeInsets.only(bottom: 30),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Hobby'),
-              SizedBox(height: 6,),
-              TextFormField(
-                cursorColor: item,
-                decoration: InputDecoration(
-                  hintText: 'Your Hobby',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius)
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius),
-                    borderSide: BorderSide(color: ungu)
-                  )
-                ),
-              )
-            ],
-          ),
+        return CustomForm(
+          title: 'Hobby', 
+          hintText: 'Your Hobby'
         );
       }
 
