@@ -47,6 +47,7 @@ class _StartedState extends State<Started> {
                   onPressed: (){
                     Navigator.pushNamed(context, '/sign-up');
                   },
+                  margin: EdgeInsets.only(top: 50, bottom: 80),
                 )
               ],
             ),

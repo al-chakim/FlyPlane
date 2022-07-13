@@ -6,19 +6,21 @@ class CustomButton extends StatelessWidget {
   final String title;
   final double widht;
   final VoidCallback onPressed;
+  final EdgeInsets margin;
 
   const CustomButton({Key? key, 
     required this.title,
     this.widht = double.infinity,
     required this.onPressed,
+    this.margin = EdgeInsets.zero,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 50, bottom: 80),
+      margin: margin,
       width: widht,
-      height: 50,
+      height: 55,
       child: TextButton(
         style: TextButton.styleFrom(
             backgroundColor: ungu,

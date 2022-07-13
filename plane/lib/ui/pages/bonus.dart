@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plane/ui/pages/main_page.dart';
+import 'package:plane/ui/widgets/custom_button.dart';
 import '../../shared/theme.dart';
 
 class Bonus extends StatefulWidget {
@@ -124,28 +125,13 @@ class _BonusState extends State<Bonus> {
     }
 
     Widget start (){
-      return Container(
-        width: 220,
-        height: 55,
+      return CustomButton(
+        title: 'Start Fly Now', 
+        onPressed: (){
+          Navigator.pushNamed(context, '/main');
+        },
+        widht: 220,
         margin: EdgeInsets.only(top: 50),
-        child: TextButton(
-          onPressed: (){
-            Navigator.pushNamed(context, '/main');
-          }, 
-          style: TextButton.styleFrom(
-            backgroundColor: ungu,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(defaultRadius)
-            )
-          ),
-          child: Text(
-            'Start Fly Now',
-            style: whiteTextStyle.copyWith(
-              fontSize: 18,
-              fontWeight: medium
-            ),
-          )
-        ),
       );
     }
 
