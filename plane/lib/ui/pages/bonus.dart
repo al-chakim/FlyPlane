@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane/ui/pages/main_page.dart';
 import '../../shared/theme.dart';
 
 class Bonus extends StatefulWidget {
@@ -127,7 +128,9 @@ class _BonusState extends State<Bonus> {
         height: 55,
         margin: EdgeInsets.only(top: 50),
         child: TextButton(
-          onPressed: (){}, 
+          onPressed: (){
+            Navigator.pushNamed(context, '/main');
+          }, 
           style: TextButton.styleFrom(
             backgroundColor: ungu,
             shape: RoundedRectangleBorder(
