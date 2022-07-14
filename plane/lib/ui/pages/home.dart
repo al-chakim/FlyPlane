@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plane/ui/widgets/des_card.dart';
 import '../../shared/theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -57,68 +58,42 @@ class HomePage extends StatelessWidget {
   Widget Popular (){
     return Container(
       margin: EdgeInsets.only(top: 30),
-      child: Row(
-        children: [
-          Container(
-            height: 320,
-            width: 200,
-            margin: EdgeInsets.only(left: defaultMargin),
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: putih
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            DestinationCard(
+              name: 'Lake Ciliwung', 
+              city: 'Tangerang', 
+              imageUrl: 'assets/des1.png',
+              rating: 4.5,
             ),
-            child: Column(
-              children: [
-                Container(
-                  width: 180,
-                  height: 220,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18),
-                    image: DecorationImage(
-                      image: AssetImage('assets/des1.png')
-                    )
-                  ),
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      width: 55,
-                      height: 25,
-                      decoration: BoxDecoration(
-                        color: putih,
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(18)
-                        )
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 18,
-                            width: 18,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('assets/star.png')
-                              )
-                            ),
-                          ),
-                          SizedBox(width: 3,),
-                          Text(
-                            '4.8',
-                            style: blackTextStyle.copyWith(
-                              fontWeight: semibold
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                )
-              ],
+            DestinationCard(
+              name: 'White Houses', 
+              city: 'Spain', 
+              imageUrl: 'assets/des2.png',
+              rating: 4.9,
             ),
-          ),
-        ],
+            DestinationCard(
+              name: 'Hill Heyo', 
+              city: 'Monaco', 
+              imageUrl: 'assets/des3.png',
+              rating: 4.2,
+            ),
+            DestinationCard(
+              name: 'Menarra', 
+              city: 'Japan', 
+              imageUrl: 'assets/des4.png',
+              rating: 4.7,
+            ),
+            DestinationCard(
+              name: 'Payung Teduh', 
+              city: 'Singapore', 
+              imageUrl: 'assets/des5.png',
+              rating: 3.3,
+            ),
+          ],
+        ),
       ),
     );
   }
