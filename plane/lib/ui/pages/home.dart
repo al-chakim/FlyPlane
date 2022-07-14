@@ -146,6 +146,7 @@ class HomePage extends StatelessWidget {
             imageUrl: 'assets/b10.png',
             rating: 4.4,
           ),
+          SizedBox(height: 100,)
         ],
       ),
     );
