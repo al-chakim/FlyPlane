@@ -53,8 +53,8 @@ class _MainpageState extends State<Mainpage> {
       backgroundColor: bg,
       body: Stack(
         children: [
-          CustomBarBawah(),
           buildContext(),
+          CustomBarBawah(),
         ]
       ),
     );

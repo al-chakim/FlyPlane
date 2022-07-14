@@ -49,6 +49,7 @@ class _SignUpState extends State<SignUp> {
 
       Widget submitButton(){
         return CustomButton(
+          margin: EdgeInsets.only(top: 15),
           title: 'Get Started', 
           onPressed: (){
             Navigator.pushNamed(context, '/bonus');

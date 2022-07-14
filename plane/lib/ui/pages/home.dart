@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plane/ui/widgets/des_card.dart';
+import 'package:plane/ui/widgets/des_tile.dart';
 import '../../shared/theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -46,7 +47,7 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: AssetImage('assets/profile.png')
+                  image: AssetImage('assets/kag.jpg')
                 )
               ),
             )
@@ -98,10 +99,63 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  Widget NewDes (){
+    return Container(
+      margin: EdgeInsets.only(
+        top: 30,
+        left: defaultMargin,
+        right: defaultMargin
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'New This Year',
+            style: blackTextStyle.copyWith(
+              fontWeight: semibold,
+              fontSize: 18
+            ),
+          ),
+          DestinationTile(
+            name: 'Danau Beratan', 
+            place: 'Singaraja', 
+            imageUrl: 'assets/b5.png',
+            rating: 4.0,
+          ),
+          DestinationTile(
+            name: 'Sydney Opera', 
+            place: 'Australia', 
+            imageUrl: 'assets/b4.png',
+            rating: 4.5,
+          ),
+          DestinationTile(
+            name: 'Roma', 
+            place: 'Italy', 
+            imageUrl: 'assets/b7.png',
+            rating: 4.2,
+          ),
+          DestinationTile(
+            name: 'Payung Teduh', 
+            place: 'Singapure', 
+            imageUrl: 'assets/b12.png',
+            rating: 4.0,
+          ),
+          DestinationTile(
+            name: 'Hill Hey', 
+            place: 'Monaco', 
+            imageUrl: 'assets/b10.png',
+            rating: 4.4,
+          ),
+        ],
+      ),
+    );
+  }
+
     return ListView(
       children: [
         Header(),
         Popular(),
+        NewDes(),
       ],
     );
   }
