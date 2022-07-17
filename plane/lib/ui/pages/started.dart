@@ -20,7 +20,7 @@ class _StartedState extends State<Started> {
             height: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.fitHeight,
+                fit: BoxFit.cover,
                 image: AssetImage('assets/bg1.png')
               )
             ),
