@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plane/ui/widgets/custom_button.dart';
 import 'package:plane/ui/widgets/custom_form.dart';
+import 'package:plane/ui/widgets/poto_item.dart';
 import '../../shared/theme.dart';
 
 class DetailPage extends StatelessWidget {
@@ -51,7 +52,7 @@ class DetailPage extends StatelessWidget {
       child: Column(
         children: [
 
-          // gambar emblem
+          // NOTE: gambar emblem
           Container(
             width: 110,
             height: 25,
@@ -67,7 +68,7 @@ class DetailPage extends StatelessWidget {
             ),
           ),
 
-          //title
+          // NOTE: title
           Container(
             margin: EdgeInsets.only(top: 256),
             child: Row(
@@ -120,7 +121,7 @@ class DetailPage extends StatelessWidget {
             ),
           ),
 
-          // deskripsi
+          // NOTE: deskripsi
           Container(
             margin: EdgeInsets.only(top: 30),
             width: double.infinity,
@@ -138,7 +139,7 @@ class DetailPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
 
-                // about adn desc
+                // NOTE: about adn desc
                 Text(
                   'About',
                   style: blackTextStyle.copyWith(
@@ -152,6 +153,65 @@ class DetailPage extends StatelessWidget {
                   style: blackTextStyle.copyWith(
                     height: 1.5
                   ),
+                ),
+
+                SizedBox(height: 20,),
+
+                // NOTE: photo
+                Text(
+                  'Photos',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: semibold
+                  ),
+                ),
+                SizedBox(height: 6,),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      PotoItem(imageUrl: 'assets/p1.png',),
+                      PotoItem(imageUrl: 'assets/p3.png',),
+                      PotoItem(imageUrl: 'assets/p2.png',),
+                      PotoItem(imageUrl: 'assets/des2.png',),
+                      PotoItem(imageUrl: 'assets/des3.png',),
+                      PotoItem(imageUrl: 'assets/des4.png',),
+                      PotoItem(imageUrl: 'assets/des5.png',),
+                    ],
+                  ),
+                ),
+
+                SizedBox(height: 20,),
+
+                // NOTE: Interests
+                Text(
+                  'Interests',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: semibold
+                  ),
+                ),
+                SizedBox(height: 6,),
+                Row(
+                  children: [
+                    Container(
+                      width: 16,
+                      height: 16,
+                      margin: EdgeInsets.only(right: 6),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(
+                            'assets/cek.png'
+                          )
+                        )
+                      ),
+                    ),
+                    Text(
+                      'kids Park',
+                      style: blackTextStyle,
+                    )
+                  ],
                 )
               ],
             ),
