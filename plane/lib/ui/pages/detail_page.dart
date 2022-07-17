@@ -135,6 +135,7 @@ class DetailPage extends StatelessWidget {
               ),
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
 
                 // about adn desc
@@ -143,6 +144,13 @@ class DetailPage extends StatelessWidget {
                   style: blackTextStyle.copyWith(
                     fontSize: 16,
                     fontWeight: semibold
+                  ),
+                ),
+                SizedBox(height: 5,),
+                Text(
+                  'Berada di jalur jalan provinsi yang menghubungkan Denpasar Singaraja serta letaknya yang dekat dengan Kebun Raya Eka Karya menjadikan tempat Bali.',
+                  style: blackTextStyle.copyWith(
+                    height: 1.5
                   ),
                 )
               ],
@@ -154,7 +162,7 @@ class DetailPage extends StatelessWidget {
   }
 
     return Scaffold(
-      backgroundColor: putih,
+      backgroundColor: bg,
       body: Stack(
         children: [
           BackImage(),
