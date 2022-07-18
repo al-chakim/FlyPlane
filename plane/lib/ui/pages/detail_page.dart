@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plane/ui/pages/seat_psge.dart';
+import 'package:plane/ui/pages/seat_page.dart';
 import 'package:plane/ui/widgets/custom_button.dart';
 import 'package:plane/ui/widgets/interest.dart';
 import 'package:plane/ui/widgets/poto_item.dart';
