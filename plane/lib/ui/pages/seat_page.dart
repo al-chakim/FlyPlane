@@ -1,3 +1,5 @@
+
+import 'package:plane/ui/pages/chekout_page.dart';
 import 'package:plane/ui/widgets/custom_button.dart';
 import 'package:plane/ui/widgets/seat_item.dart';
 
@@ -334,15 +336,9 @@ class SeatPage extends StatelessWidget {
     );
   }
 
-  Widget button(){
-    return CustomButton(
-      title: 'Continue to Checkout', 
-      onPressed: (){},
-      margin: EdgeInsets.only(
-        top: 30, bottom: 40
-      ),
-    );
-  }
+  // Widget button(){
+  //   return 
+  // }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -355,7 +351,20 @@ class SeatPage extends StatelessWidget {
           title(),
           seatStatus(),
           selectSeat(),
-          button()
+          //button()
+          CustomButton(
+            title: 'Continue to Checkout', 
+            onPressed: (){
+              Navigator.push(
+                context, MaterialPageRoute(
+                  builder: (context) => CheckOut()
+                )
+              );
+            },
+            margin: EdgeInsets.only(
+              top: 30, bottom: 40
+            ),
+          )
         ],
       ),
     );
