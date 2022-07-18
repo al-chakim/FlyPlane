@@ -1,3 +1,6 @@
+import 'package:plane/ui/widgets/custom_button.dart';
+import 'package:plane/ui/widgets/seat_item.dart';
+
 import '../../shared/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -103,48 +106,227 @@ class SeatPage extends StatelessWidget {
 
           //NOTE: indicator
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Expanded(
+              Container(
+                width: 48,
+                height: 48,
                 child: Center(
                   child: Text(
                     'A',
                     style: greyTextStyle,
                   ),
-                )
+                ),
               ),
-              Expanded(
+              Container(
+                width: 48,
+                height: 48,
                 child: Center(
                   child: Text(
                     'B',
                     style: greyTextStyle,
                   ),
-                )
+                ),
               ),
-              Expanded(
+              Container(
+                width: 48,
+                height: 48,
                 child: Center(
                   child: Text(
-                    ''
+                    '',
+                    style: greyTextStyle,
                   ),
-                )
+                ),
               ),
-              Expanded(
+              Container(
+                width: 48,
+                height: 48,
                 child: Center(
                   child: Text(
                     'C',
                     style: greyTextStyle,
                   ),
-                )
+                ),
               ),
-              Expanded(
+              Container(
+                width: 48,
+                height: 48,
                 child: Center(
                   child: Text(
                     'D',
                     style: greyTextStyle,
                   ),
-                )
+                ),
               ),
-            ],
-          )
+            ]
+          ),
+
+          //NOTE: seat 1
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SeatItem(status: 2,),
+                SeatItem(status: 2,),
+                Container(
+                  height: 48,
+                  width: 48,
+                  child: Center(
+                    child: Text(
+                      '1', 
+                      style: greyTextStyle,
+                    )
+                  ),
+                ),
+                SeatItem(status: 0,),
+                SeatItem(status: 2,),
+              ],
+            ),
+          ),
+
+          //NOTE: seat 2
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SeatItem(status: 0,),
+                SeatItem(status: 0,),
+                Container(
+                  height: 48,
+                  width: 48,
+                  child: Center(
+                    child: Text(
+                      '2', 
+                      style: greyTextStyle,
+                    )
+                  ),
+                ),
+                SeatItem(status: 0,),
+                SeatItem(status: 2,),
+              ],
+            ),
+          ),
+
+          //NOTE: seat 3
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SeatItem(status: 1,),
+                SeatItem(status: 1,),
+                Container(
+                  height: 48,
+                  width: 48,
+                  child: Center(
+                    child: Text(
+                      '3', 
+                      style: greyTextStyle,
+                    )
+                  ),
+                ),
+                SeatItem(status: 0,),
+                SeatItem(status: 0,),
+              ],
+            ),
+          ),
+
+          //NOTE: seat 4
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SeatItem(status: 0,),
+                SeatItem(status: 2,),
+                Container(
+                  height: 48,
+                  width: 48,
+                  child: Center(
+                    child: Text(
+                      '4', 
+                      style: greyTextStyle,
+                    )
+                  ),
+                ),
+                SeatItem(status: 0,),
+                SeatItem(status: 0,),
+              ],
+            ),
+          ),
+
+          //NOTE: seat 5
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SeatItem(status: 0,),
+                SeatItem(status: 0,),
+                Container(
+                  height: 48,
+                  width: 48,
+                  child: Center(
+                    child: Text(
+                      '5', 
+                      style: greyTextStyle,
+                    )
+                  ),
+                ),
+                SeatItem(status: 2,),
+                SeatItem(status: 0,),
+              ],
+            ),
+          ),
+
+          //NOTE: status seat
+          Container(
+            margin: EdgeInsets.only(top: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Your seat',
+                  style: greyTextStyle.copyWith(
+                    fontWeight: light
+                  ),
+                ),
+                Text(
+                  'A3,B3',
+                  style: blackTextStyle.copyWith(
+                    fontWeight: medium,
+                    fontSize: 16
+                  ),
+                )
+              ],
+            ),
+          ),
+
+          //NOTE: total price
+          Container(
+            margin: EdgeInsets.only(top: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Total',
+                  style: greyTextStyle.copyWith(
+                    fontWeight: light
+                  ),
+                ),
+                Text(
+                  'IDR 5.600.000',
+                  style: purpleTextStyle.copyWith(
+                    fontWeight: semibold,
+                    fontSize: 16
+                  ),
+                )
+              ],
+            ),
+          ),
+
         ],
       ),
     );
@@ -161,6 +343,11 @@ class SeatPage extends StatelessWidget {
           title(),
           seatStatus(),
           selectSeat(),
+          CustomButton(
+            title: 'Continue to Checkout', 
+            onPressed: (){},
+            margin: EdgeInsets.only(top: 30),
+          )
         ],
       ),
     );

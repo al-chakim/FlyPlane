@@ -13,6 +13,8 @@ Color bg = Color(0xffFAFAFA);
 Color activ = Color(0xffDBD7ED);
 Color putih = Color(0xffFFFFFF);
 Color trans = Colors.transparent;
+Color kUnavail = Color(0xffEBECF1);
+Color kAvail = Color(0xffE0D9FF);
 
 TextStyle blackTextStyle = GoogleFonts.poppins(
   color: item
