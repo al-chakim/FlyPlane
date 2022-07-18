@@ -93,9 +93,11 @@ class SeatPage extends StatelessWidget {
   Widget selectSeat(){
     return Container(
       margin: EdgeInsets.only(top: 30),
-      padding: EdgeInsets.symmetric(
-        horizontal: 22,
-        vertical: 30,
+      padding: EdgeInsets.only(
+        left: 22,
+        right: 22,
+        top: 15,
+        bottom: 30
       ),
       decoration: BoxDecoration(
         color: putih,
@@ -332,6 +334,16 @@ class SeatPage extends StatelessWidget {
     );
   }
 
+  Widget button(){
+    return CustomButton(
+      title: 'Continue to Checkout', 
+      onPressed: (){},
+      margin: EdgeInsets.only(
+        top: 30, bottom: 40
+      ),
+    );
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bg,
@@ -343,11 +355,7 @@ class SeatPage extends StatelessWidget {
           title(),
           seatStatus(),
           selectSeat(),
-          CustomButton(
-            title: 'Continue to Checkout', 
-            onPressed: (){},
-            margin: EdgeInsets.only(top: 30),
-          )
+          button()
         ],
       ),
     );
