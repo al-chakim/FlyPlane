@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plane/ui/pages/home.dart';
+import 'package:plane/ui/pages/setting_page.dart';
+import 'package:plane/ui/pages/transaction_page.dart';
+import 'package:plane/ui/pages/wallet_page.dart';
 import 'package:plane/ui/widgets/custom_navigasi.dart';
 import '../../shared/theme.dart';
 
