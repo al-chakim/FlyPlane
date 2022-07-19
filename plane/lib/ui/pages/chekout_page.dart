@@ -80,6 +80,69 @@ class CheckOut extends StatelessWidget {
         color: putih,
         borderRadius: BorderRadius.circular(defaultRadius)
       ),
+      child:  Row(
+        children: [
+
+          //NOTE: destination tile
+          Container(
+            height: 70,
+            width: 70,
+            margin: EdgeInsets.only(right: 15),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(defaultRadius),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(
+                  'assets/des1.png'
+                )
+              )
+            )
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Lake Ciliwung',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium
+                  ),
+                ),
+                SizedBox(height: 5,),
+                Text(
+                  'Tngerang',
+                  style: greyTextStyle.copyWith(
+                    fontWeight: light,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 18,
+                width: 18,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/star.png')
+                  )
+                ),
+              ),
+              SizedBox(width: 3,),
+              Text(
+                '4.5',
+                style: blackTextStyle.copyWith(
+                  fontWeight: semibold
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 
