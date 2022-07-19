@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plane/shared/theme.dart';
+import 'package:plane/ui/widgets/booking_detail.dart';
 
 class CheckOut extends StatelessWidget {
   const CheckOut({ Key? key }) : super(key: key);
@@ -80,66 +81,120 @@ class CheckOut extends StatelessWidget {
         color: putih,
         borderRadius: BorderRadius.circular(defaultRadius)
       ),
-      child:  Row(
+      child:  Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
           //NOTE: destination tile
-          Container(
-            height: 70,
-            width: 70,
-            margin: EdgeInsets.only(right: 15),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(defaultRadius),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(
-                  'assets/des1.png'
-                )
-              )
-            )
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Lake Ciliwung',
-                  style: blackTextStyle.copyWith(
-                    fontSize: 18,
-                    fontWeight: medium
-                  ),
-                ),
-                SizedBox(height: 5,),
-                Text(
-                  'Tngerang',
-                  style: greyTextStyle.copyWith(
-                    fontWeight: light,
-                  ),
-                ),
-              ],
-            ),
-          ),
           Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 18,
-                width: 18,
+                height: 70,
+                width: 70,
+                margin: EdgeInsets.only(right: 15),
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(defaultRadius),
                   image: DecorationImage(
-                    image: AssetImage('assets/star.png')
+                    fit: BoxFit.cover,
+                    image: AssetImage(
+                      'assets/des1.png'
+                    )
                   )
+                )
+              ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Lake Ciliwung',
+                      style: blackTextStyle.copyWith(
+                        fontSize: 18,
+                        fontWeight: medium
+                      ),
+                    ),
+                    SizedBox(height: 5,),
+                    Text(
+                      'Tngerang',
+                      style: greyTextStyle.copyWith(
+                        fontWeight: light,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              SizedBox(width: 3,),
-              Text(
-                '4.5',
-                style: blackTextStyle.copyWith(
-                  fontWeight: semibold
-                ),
-              )
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    height: 18,
+                    width: 18,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/star.png')
+                      )
+                    ),
+                  ),
+                  SizedBox(width: 3,),
+                  Text(
+                    '4.5',
+                    style: blackTextStyle.copyWith(
+                      fontWeight: semibold
+                    ),
+                  )
+                ],
+              ),
             ],
+          ),
+
+          // NOTE: detail booking
+          Container(
+            margin: EdgeInsets.only(top: 15),
+            child: Text(
+              'Booking Detail',
+              style: blackTextStyle.copyWith(
+                fontWeight: semibold,
+                fontSize: 16
+              ),
+            ),
+          ),
+
+          //NOTE: detail item
+          BookingDetail(
+            item: 'Traveler', 
+            value: '2 person', 
+            color: item
+          ),
+          BookingDetail(
+            item: 'Seat', 
+            value: '3A, 3B', 
+            color: item
+          ),
+          BookingDetail(
+            item: 'Insurance', 
+            value: 'YES', 
+            color: ijo
+          ),
+          BookingDetail(
+            item: 'TRefundable', 
+            value: 'NO', 
+            color: merah
+          ),
+          BookingDetail(
+            item: 'VAT', 
+            value: '45%', 
+            color: item
+          ),
+          BookingDetail(
+            item: 'Price', 
+            value: 'IDR 8.500.690', 
+            color: item
+          ),
+          BookingDetail(
+            item: 'Grand Total', 
+            value: 'IDR 12.000.000', 
+            color: ungu
           ),
         ],
       ),
