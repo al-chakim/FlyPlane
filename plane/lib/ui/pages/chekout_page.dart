@@ -201,6 +201,102 @@ class CheckOut extends StatelessWidget {
     );
   }
 
+  Widget payment(){
+    return Container(
+      margin: EdgeInsets.only(top: 30),
+      padding: EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 30
+      ),
+      decoration: BoxDecoration(
+        color: putih,
+        borderRadius: BorderRadius.circular(defaultRadius)
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Detail Payment',
+            style: blackTextStyle.copyWith(
+              fontWeight: semibold,
+              fontSize: 16
+            ),
+          ),
+          Row(
+            children: [
+              Container(
+                width: 100,
+                height: 70,
+                margin: EdgeInsets.only(top: 16, right: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(defaultRadius),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(
+                      'assets/mon.png'
+                    )
+                  )
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(right: 6),
+                      height: 24,
+                      width: 24,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(
+                            'assets/logo1.png'
+                          )
+                        )
+                      ),
+                    ),
+                    Text(
+                      'PAY',
+                      style: whiteTextStyle.copyWith(
+                        fontWeight: medium,
+                        fontSize: 16
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 16),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      child: Column(
+                        children: [
+                          Text(
+                            'IDR 80.400.000',
+                            style: blackTextStyle.copyWith(
+                              fontWeight: semibold,
+                              fontSize: 18
+                            ),
+                          ),
+                          Text(
+                            'Current Balance',
+                            style: greyTextStyle.copyWith(
+                              fontWeight: medium,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
@@ -210,6 +306,7 @@ class CheckOut extends StatelessWidget {
         children: [
           route(),
           booking(),
+          payment(),
         ],
       ),
     );
