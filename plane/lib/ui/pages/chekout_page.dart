@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plane/shared/theme.dart';
-import 'package:plane/ui/pages/succes_checkout.dart.dart';
+import 'package:plane/ui/pages/succes_checkout.dart';
 import 'package:plane/ui/widgets/booking_detail.dart';
 import 'package:plane/ui/widgets/custom_button.dart';
 
