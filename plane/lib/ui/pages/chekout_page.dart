@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plane/shared/theme.dart';
+import 'package:plane/ui/pages/succes_checkout.dart.dart';
 import 'package:plane/ui/widgets/booking_detail.dart';
+import 'package:plane/ui/widgets/custom_button.dart';
 
 class CheckOut extends StatelessWidget {
   const CheckOut({ Key? key }) : super(key: key);
@@ -206,7 +208,7 @@ class CheckOut extends StatelessWidget {
       margin: EdgeInsets.only(top: 30),
       padding: EdgeInsets.symmetric(
         horizontal: 20,
-        vertical: 30
+        vertical: 30,
       ),
       decoration: BoxDecoration(
         color: putih,
@@ -222,83 +224,105 @@ class CheckOut extends StatelessWidget {
               fontSize: 16
             ),
           ),
-          Row(
-            children: [
-              Container(
-                width: 100,
-                height: 70,
-                margin: EdgeInsets.only(top: 16, right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(defaultRadius),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(
-                      'assets/mon.png'
+          Container(
+            margin: EdgeInsets.only(top: 16),
+            child: Row(
+              children: [
+
+                //NOTE: gambar pesawat
+                Container(
+                  height: 70,
+                  width: 100,
+                  margin: EdgeInsets.only(right: 16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                        'assets/mon.png'
+                      )
                     )
-                  )
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(right: 6),
-                      height: 24,
-                      width: 24,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage(
-                            'assets/logo1.png'
-                          )
-                        )
-                      ),
-                    ),
-                    Text(
-                      'PAY',
-                      style: whiteTextStyle.copyWith(
-                        fontWeight: medium,
-                        fontSize: 16
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 16),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            'IDR 80.400.000',
-                            style: blackTextStyle.copyWith(
-                              fontWeight: semibold,
-                              fontSize: 18
-                            ),
+                  ),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 24,
+                          width: 24,
+                          margin: EdgeInsets.only(right: 6),
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage(
+                                'assets/logo1.png'
+                              )
+                            )
                           ),
-                          Text(
-                            'Current Balance',
-                            style: greyTextStyle.copyWith(
-                              fontWeight: medium,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          'PAY',
+                          style: whiteTextStyle.copyWith(
+                            fontWeight: medium,
+                            fontSize: 16
+                          ),
+                        )
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ],
-          ),
+
+                //
+                Expanded(
+                  child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'IDR 80.400.000',
+                        style: blackTextStyle.copyWith(
+                          fontWeight: semibold,
+                          fontSize: 18
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                        'Current Balenced',
+                        style: greyTextStyle.copyWith(
+                          fontWeight: light,
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )
         ],
+      ),
+    );
+  }
+
+  Widget tacButton(){
+    return Container(
+      alignment: Alignment.center,
+      margin: EdgeInsets.only(
+        bottom: 50, 
+        top: 30
+      ),
+      child: Text(
+        'Terms and Conditions',
+        style: greyTextStyle.copyWith(
+          fontWeight: light,
+          fontSize: 16,
+          decoration: TextDecoration.underline
+        ),
       ),
     );
   }
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bg,
       body: ListView(
         padding: EdgeInsets.symmetric(
           horizontal: defaultMargin
@@ -307,6 +331,20 @@ class CheckOut extends StatelessWidget {
           route(),
           booking(),
           payment(),
+          CustomButton(
+            title: 'Pay Now', 
+            margin: EdgeInsets.only(
+              top: 30,
+            ),
+            onPressed: (){
+              Navigator.push(
+                context, MaterialPageRoute(
+                  builder: (context) => SuccesCheckout()
+                )
+              );
+            },
+          ),
+          tacButton(),
         ],
       ),
     );
