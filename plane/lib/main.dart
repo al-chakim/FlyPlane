@@ -6,8 +6,16 @@ import 'package:plane/ui/pages/main_page.dart';
 import 'package:plane/ui/pages/sign_up.dart';
 import 'package:plane/ui/pages/splashPage.dart';
 import 'package:plane/ui/pages/started.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main () => runApp(MyApp());
+
+void main () async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({ Key? key }) : super(key: key);
