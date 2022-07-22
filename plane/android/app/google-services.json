@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "711373755154",
+    "project_id": "airplane-fce47",
+    "storage_bucket": "airplane-fce47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711373755154:android:84d8949d12d13a2f6819cb",
+        "android_client_info": {
+          "package_name": "com.amru.plane"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711373755154-k80sj4in28jm0a67nvtlrlkfcag9hp36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoi-VIpEnsCoGp9lhZmFd3O0R79oV1GMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711373755154-k80sj4in28jm0a67nvtlrlkfcag9hp36.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
