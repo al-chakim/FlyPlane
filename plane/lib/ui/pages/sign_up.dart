@@ -1,18 +1,16 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:plane/ui/widgets/custom_button.dart';
 import 'package:plane/ui/widgets/custom_form.dart';
 import '../../shared/theme.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({ Key? key }) : super(key: key);
+class SignUp extends StatelessWidget {
+  SignUp({ Key? key }) : super(key: key);
 
-  @override
-  State<SignUp> createState() => _SignUpState();
-}
+  TextEditingController nameController = TextEditingController(text: '');
+  TextEditingController emailController = TextEditingController(text: '');
+  TextEditingController passwordController = TextEditingController(text: '');
+  TextEditingController hobbyController = TextEditingController(text: '');
 
-class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
 
@@ -21,14 +19,16 @@ class _SignUpState extends State<SignUp> {
       Widget nameInput(){
         return CustomForm(
           title: 'Full Name', 
-          hintText: 'Your Full Name'
+          hintText: 'Your Full Name',
+          controller: nameController,
         );
       }
 
       Widget emailInput(){
         return CustomForm(
           title: 'Email Address', 
-          hintText: 'Your Email Address'
+          hintText: 'Your Email Address',
+          controller: emailController,
         );
       }
 
@@ -37,13 +37,15 @@ class _SignUpState extends State<SignUp> {
           title: 'Password', 
           hintText: 'Password',
           obscureText: true,
+          controller: passwordController,
         );
       }
 
       Widget hobiInput(){
         return CustomForm(
           title: 'Hobby', 
-          hintText: 'Your Hobby'
+          hintText: 'Your Hobby',
+          controller: hobbyController,
         );
       }
 
