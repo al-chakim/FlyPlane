@@ -24,10 +24,10 @@ class AuthSuccess extends AuthState {
 
 class AuthFailed extends AuthState{
 
-  final String eror;
+  final String error;
 
-  AuthFailed(this.eror);
+  AuthFailed(this.error);
 
   @override
-  List<Object> get props => [eror];
+  List<Object> get props => [error];
 }
