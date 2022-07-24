@@ -28,6 +28,7 @@ class CustomForm extends StatelessWidget {
           SizedBox(height: 6,),
           TextFormField(
             cursorColor: item,
+            controller: controller,
             obscureText: obscureText,
             decoration: InputDecoration(
               hintText: hintText,
