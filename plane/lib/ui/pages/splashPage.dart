@@ -1,7 +1,7 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:plane/ui/pages/started.dart';
 import '../../shared/theme.dart';
 
 class splash extends StatefulWidget {
@@ -18,7 +18,16 @@ class _splashState extends State<splash> {
     // TODO: implement initState
     Timer(
       Duration(seconds: 5), (){
-        Navigator.pushReplacementNamed(context, '/Started');
+
+        User? user =FirebaseAuth.instance.currentUser;
+
+        if ( user == null ) {
+          Navigator.pushNamedAndRemoveUntil(context, '/Started', (route) => false);
+        } else {
+          Navigator.pushNamedAndRemoveUntil(context, '/main', (route) => false);
+        }
+
+        
         }
       );
     super.initState();

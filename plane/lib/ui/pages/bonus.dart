@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:plane/ui/pages/main_page.dart';
 import 'package:plane/ui/widgets/custom_button.dart';
 import '../../shared/theme.dart';
 
