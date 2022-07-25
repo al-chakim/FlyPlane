@@ -48,7 +48,7 @@ class _StartedState extends State<Started> {
                   title: 'Get Started',
                   widht: 220,
                   onPressed: (){
-                    Navigator.pushNamed(context, '/sign-up');
+                    Navigator.pushNamed(context, '/sign-in');
                   },
                   margin: EdgeInsets.only(top: 50, bottom: 80),
                 )
