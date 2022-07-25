@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plane/cubit/auth_cubit.dart';
+import 'package:plane/cubit/page_cubit.dart';
 import 'package:plane/ui/widgets/custom_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,6 +22,7 @@ class Setting extends StatelessWidget {
             )
           );
         } else if (state is AuthInitial) {
+          context .read<PageCubit>().setState(0);
           Navigator.pushNamedAndRemoveUntil(
             context, '/sign-up', (route) => false
           );

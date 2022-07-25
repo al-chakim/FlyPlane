@@ -21,7 +21,7 @@ class UserService{
     }
   } 
 
-  Future<UserModel> getUserById(String id) async {
+  Future<UserModel> byId(String id) async {
     try {
       DocumentSnapshot snapshot = await _userReference.doc(id).get();
       return UserModel(
