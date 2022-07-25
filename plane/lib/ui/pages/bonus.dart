@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:plane/cubit/auth_cubit.dart';
 import 'package:plane/ui/widgets/custom_button.dart';
 import '../../shared/theme.dart';
 
 class Bonus extends StatefulWidget {
-  const Bonus({ Key? key }) : super(key: key);
+  const Bonus({Key? key}) : super(key: key);
 
   @override
   State<Bonus> createState() => _BonusState();
@@ -12,104 +14,101 @@ class Bonus extends StatefulWidget {
 class _BonusState extends State<Bonus> {
   @override
   Widget build(BuildContext context) {
+    Widget bonusCard() {
+      return BlocBuilder<AuthCubit, AuthState>(
+        builder: (context, state) {
 
-
-    Widget bonusCard(){
-      return Container(
-        width: 300,
-        height: 211,
-        padding: EdgeInsets.all(defaultMargin),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              'assets/mon.png',
-            )
-          ),
-          boxShadow: [BoxShadow(
-            color: ungu.withOpacity(0.8),
-            blurRadius: 50,
-            offset: Offset(0, 5),
-          )
-          ] 
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
+          if (state is AuthSuccess) {
+            return Container(
+            width: 300,
+            height: 211,
+            padding: EdgeInsets.all(defaultMargin),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                  'assets/mon.png',
+                )),
+                boxShadow: [
+                  BoxShadow(
+                    color: ungu.withOpacity(0.8),
+                    blurRadius: 50,
+                    offset: Offset(0, 5),
+                  )
+                ]),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Name',
-                        style: whiteTextStyle.copyWith(
-                          fontWeight: medium
-                        ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Name',
+                            style: whiteTextStyle.copyWith(fontWeight: medium),
+                          ),
+                          Text(
+                            state.user.name,
+                            style: whiteTextStyle.copyWith(
+                                fontSize: 20, fontWeight: semibold),
+                            overflow: TextOverflow.ellipsis,
+                          )
+                        ],
                       ),
-                      Text(
-                        'Al - Chakim',
-                        style: whiteTextStyle.copyWith(
-                          fontSize: 20,
-                          fontWeight: semibold
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  width: 24,
-                  height: 24,
-                  margin: EdgeInsets.only(right: 6),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/logo1.png')
+                    ),
+                    Container(
+                      width: 24,
+                      height: 24,
+                      margin: EdgeInsets.only(right: 6),
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('assets/logo1.png'))),
+                    ),
+                    Text(
+                      'Pay',
+                      style: whiteTextStyle.copyWith(
+                          fontSize: 16, fontWeight: semibold),
                     )
+                  ],
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Text(
+                  'Balanced',
+                  style: whiteTextStyle.copyWith(
+                    fontWeight: light,
                   ),
                 ),
                 Text(
-                  'Pay',
+                  'IDR 280.000.000',
                   style: whiteTextStyle.copyWith(
-                    fontSize: 16,
-                    fontWeight: semibold
-                  ),
+                      fontWeight: semibold, fontSize: 26),
                 )
               ],
             ),
-            SizedBox(height: 40,),
-            Text(
-              'Balanced',
-              style: whiteTextStyle.copyWith(
-                fontWeight: light,
-              ),
-            ),
-            Text(
-              'IDR 280.000.000',
-              style: whiteTextStyle.copyWith(
-                fontWeight: semibold,
-                fontSize: 26
-              ),
-            )
-          ],
-        ),
+          );
+          } else {
+            return SizedBox();
+          }
+
+          
+        },
       );
     }
 
-    Widget title (){
+    Widget title() {
       return Container(
         margin: EdgeInsets.only(top: 80),
         child: Text(
           'Big Bonus 🎉',
-          style: blackTextStyle.copyWith(
-            fontSize: 32,
-            fontWeight: semibold
-          ),
+          style: blackTextStyle.copyWith(fontSize: 32, fontWeight: semibold),
         ),
       );
     }
 
-    Widget subtitle (){
+    Widget subtitle() {
       return Container(
         margin: EdgeInsets.only(top: 10),
         child: Text(
@@ -123,10 +122,10 @@ class _BonusState extends State<Bonus> {
       );
     }
 
-    Widget start (){
+    Widget start() {
       return CustomButton(
-        title: 'Start Fly Now', 
-        onPressed: (){
+        title: 'Start Fly Now',
+        onPressed: () {
           Navigator.pushNamedAndRemoveUntil(context, '/main', (route) => false);
         },
         widht: 220,
