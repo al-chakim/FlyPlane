@@ -24,7 +24,7 @@ class Setting extends StatelessWidget {
         } else if (state is AuthInitial) {
           context .read<PageCubit>().setState(0);
           Navigator.pushNamedAndRemoveUntil(
-            context, '/sign-up', (route) => false
+            context, '/sign-in', (route) => false
           );
         }
 

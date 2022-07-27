@@ -51,7 +51,7 @@ class AuthService {
   ) async {
     try {
       UserCredential userCredential = await _auth
-        .createUserWithEmailAndPassword(
+        .signInWithEmailAndPassword(
           email: email, 
           password: password
         );
