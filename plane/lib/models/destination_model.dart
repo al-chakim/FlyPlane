@@ -28,13 +28,10 @@ class DestinationModel extends Equatable {
         city: json['city'],
         imageUrl: json['imageUrl'],
         rating: json['rating'],
-        price: json['price']
+        price: json['price'],
       );
 
   @override
-  // TODO: implement props
   List<Object?> get props => [id, name, city, imageUrl, rating, price,];
-
-
 
 }
